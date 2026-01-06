@@ -1,0 +1,78 @@
+---
+---
+<section id="features" class="py-24 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/10 rounded-full blur-[100px] -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Everything you need to <span class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">secure</span> your stack</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">Stratum unifies all your security tools into one high-performance platform. No more context switching.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+             {/* Card 1: Large (Nuclei) */}
+            <div class="md:col-span-2 row-span-2 bg-slate-900/40 border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-cyan-500/30 transition-all group relative overflow-hidden backdrop-blur-sm">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/80 z-0"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Nuclei Powered Engine</h3>
+                    <p class="text-slate-400 text-lg">Built on top of the fastest vulnerability scanner. Custom templates, extreme performance, and zero false positives. Run 5000+ templates in seconds.</p>
+                </div>
+                <div class="relative h-64 mt-8 bg-slate-950/50 rounded-xl border border-white/5 overflow-hidden font-mono text-sm p-4 text-slate-300">
+                     <div class="typing-effect">
+                        <span class="text-green-400">➜</span> stratum scan -t production<br/>
+                        <span class="text-slate-500">[INF]</span> Current nuclei version: v3.2.0<br/>
+                        <span class="text-slate-500">[INF]</span> Loaded 5000+ templates<br/>
+                        <span class="text-cyan-400">[INF]</span> [http-missing-security-headers] [low] found<br/>
+                        <span class="text-yellow-400">[INF]</span> [api-key-disclosure] [medium] found<br/>
+                        <span class="text-red-400">[INF]</span> [cve-2024-1337] [critical] found!<br/>
+                     </div>
+                </div>
+            </div>
+
+             {/* Card 2: Medium (Multi-Target) */}
+            <div class="md:col-span-1 bg-slate-900/40 border border-white/10 rounded-3xl p-8 hover:border-purple-500/30 transition-all relative group overflow-hidden h-[300px]">
+                 <div class="absolute -right-4 -top-4 p-4 opacity-10 group-hover:opacity-20 transition-opacity rotate-12">
+                    <svg class="w-32 h-32 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                 </div>
+                 <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 relative z-10">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                 <h3 class="text-xl font-bold text-white mb-2 relative z-10">Multi-Target</h3>
+                 <p class="text-slate-400 relative z-10">Scan Docker images, Web Apps, and Git Repositories simultaneously.</p>
+            </div>
+
+             {/* Card 3: Small (Reports) */}
+            <div class="md:col-span-1 bg-slate-900/40 border border-white/10 rounded-3xl p-8 hover:border-green-500/30 transition-all h-[300px]">
+                <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Automated Reports</h3>
+                <p class="text-slate-400">Export to PDF/JSON. Schedule automated emails to your stakeholders.</p>
+            </div>
+            
+             {/* Card 4: CI/CD Integration (Wide) */}
+            <div class="md:col-span-3 bg-slate-900/40 border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between hover:border-indigo-500/30 transition-all gap-8">
+                <div class="max-w-xl">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6">
+                         <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Seamless CI/CD Integration</h3>
+                    <p class="text-slate-400 text-lg">Integrate directly into GitHub Actions, GitLab CI, or Jenkins. Block builds if critical vulnerabilities are found.</p>
+                </div>
+                <div class="flex gap-4">
+                     {/* Fake Badges */}
+                    <div class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black font-bold">G</div>
+                        <span class="font-bold text-slate-300">GitHub</span>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold">G</div>
+                        <span class="font-bold text-slate-300">GitLab</span>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
