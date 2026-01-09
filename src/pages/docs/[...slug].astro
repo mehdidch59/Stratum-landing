@@ -1,0 +1,99 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+    const docs = await getCollection("docs");
+    console.log(
+        "Found docs slugs:",
+        docs.map((d) => d.slug),
+    );
+    return docs.map((entry: CollectionEntry<"docs">) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+interface Props {
+    entry: CollectionEntry<"docs">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const allDocs = await getCollection("docs");
+const categories = [
+    ...new Set(
+        allDocs.map((doc: CollectionEntry<"docs">) => doc.data.category),
+    ),
+].sort((a: string, b: string) => {
+    if (a === "Getting Started") return -1;
+    if (b === "Getting Started") return 1;
+    return a.localeCompare(b);
+});
+
+const groupedDocs = categories.map((category) => ({
+    name: category,
+    items: allDocs
+        .filter(
+            (doc: CollectionEntry<"docs">) => doc.data.category === category,
+        )
+        .sort((a, b) => a.data.order - b.data.order),
+}));
+---
+
+<Layout title={`Stratum Docs - ${entry.data.title}`}>
+    <Navbar />
+    <main class="pt-32 max-w-7xl mx-auto px-6 min-h-screen pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            {/* Sidebar */}
+            <aside class="space-y-8 h-fit md:sticky md:top-32">
+                {
+                    groupedDocs.map((category) => (
+                        <div>
+                            <h3 class="font-bold mb-4 text-sm uppercase tracking-wider text-slate-500">
+                                {category.name}
+                            </h3>
+                            <ul class="space-y-3">
+                                {category.items.map(
+                                    (item: CollectionEntry<"docs">) => (
+                                        <li>
+                                            <a
+                                                href={`/docs/${item.slug}`}
+                                                class={`text-sm transition-colors hover:text-cyan-400 ${
+                                                    entry.slug === item.slug
+                                                        ? "text-cyan-400 font-bold"
+                                                        : "text-slate-400"
+                                                }`}
+                                            >
+                                                {item.data.title}
+                                            </a>
+                                        </li>
+                                    ),
+                                )}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </aside>
+
+            {/* Content */}
+            <div class="md:col-span-3">
+                <article class="doc-content">
+                    <Content />
+                </article>
+
+                {/* Pagination */}
+                <div
+                    class="mt-16 pt-8 border-t border-white/10 flex justify-between"
+                >
+                    {/* Could add Prev/Next links here */}
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
