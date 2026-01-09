@@ -1,23 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import { Hero } from '../components/Hero';
-import SocialProof from '../components/SocialProof.astro';
-import Features from '../components/Features.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import Pricing from '../components/Pricing.astro';
-import { FAQ } from '../components/FAQ';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import { Hero } from "../components/Hero";
+
+import Features from "../components/Features.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import { FAQ } from "../components/FAQ";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Stratum - Secure your Infrastructure">
 	<Navbar />
 	<main>
 		<Hero client:load />
-		<SocialProof />
+
 		<Features />
 		<HowItWorks />
-		<Pricing />
 		<FAQ client:visible />
 	</main>
 	<Footer />

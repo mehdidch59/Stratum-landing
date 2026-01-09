@@ -1,29 +1,68 @@
 ---
-const logos = ["Acme Corp", "Globex", "Soylent", "Initech", "Umbrella", "Stark Ind", "Massive Dynamic", "Hooli", "Cyberdyne"];
+const logos = [
+    "Acme Corp",
+    "Globex",
+    "Soylent",
+    "Initech",
+    "Umbrella",
+    "Stark Ind",
+    "Massive Dynamic",
+    "Hooli",
+    "Cyberdyne",
+];
 ---
-<section class="py-10 border-y border-white/5 bg-slate-950/50 overflow-hidden relative z-20">
-    <p class="text-center text-slate-500 text-xs mb-6 font-bold tracking-[0.2em]">TRUSTED BY SECURITY TEAMS AT</p>
+
+<section
+    class="py-10 border-y border-white/5 bg-slate-950/50 overflow-hidden relative z-20"
+>
+    <p
+        class="text-center text-slate-500 text-xs mb-6 font-bold tracking-[0.2em]"
+    >
+        TRUSTED BY SECURITY TEAMS AT
+    </p>
     <div class="relative flex overflow-x-hidden group">
         <div class="animate-infinite-scroll flex gap-16 whitespace-nowrap py-2">
-            {logos.map((logo) => (
-                <div class="flex items-center space-x-2 px-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                   <svg class="h-8 w-auto" viewBox="0 0 100 30" fill="currentColor">
-                       <path d="M10,15 L20,5 L30,15 L20,25 Z M40,5 H50 V25 H40 Z M60,5 H80 V10 H65 V12 H75 V17 H65 V25 H60 Z" />
-                   </svg>
-                   <span class="text-xl font-bold font-mono hidden md:block">{logo}</span>
-                </div>
-            ))}
-             {/* Duplicate for seamless effect */}
-            {logos.map((logo) => (
-                <div class="flex items-center space-x-2 px-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                   <svg class="h-8 w-auto" viewBox="0 0 100 30" fill="currentColor">
-                       <path d="M10,15 L20,5 L30,15 L20,25 Z M40,5 H50 V25 H40 Z M60,5 H80 V10 H65 V12 H75 V17 H65 V25 H60 Z" />
-                   </svg>
-                   <span class="text-xl font-bold font-mono hidden md:block">{logo}</span>
-                </div>
-            ))}
+            {
+                logos.map((logo) => (
+                    <div class="flex items-center space-x-2 px-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                        <svg
+                            class="h-8 w-auto"
+                            viewBox="0 0 100 30"
+                            fill="currentColor"
+                        >
+                            <path d="M10,15 L20,5 L30,15 L20,25 Z M40,5 H50 V25 H40 Z M60,5 H80 V10 H65 V12 H75 V17 H65 V25 H60 Z" />
+                        </svg>
+                        <span class="text-xl font-bold font-mono hidden md:block">
+                            {logo}
+                        </span>
+                    </div>
+                ))
+            }
+            {/* Duplicate for seamless effect */}
+            {
+                logos.map((logo) => (
+                    <div class="flex items-center space-x-2 px-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+                        <svg
+                            class="h-8 w-auto"
+                            viewBox="0 0 100 30"
+                            fill="currentColor"
+                        >
+                            <path d="M10,15 L20,5 L30,15 L20,25 Z M40,5 H50 V25 H40 Z M60,5 H80 V10 H65 V12 H75 V17 H65 V25 H60 Z" />
+                        </svg>
+                        <span class="text-xl font-bold font-mono hidden md:block">
+                            {logo}
+                        </span>
+                    </div>
+                ))
+            }
         </div>
-        <div class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-slate-950 to-transparent z-10"></div>
-        <div class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-slate-950 to-transparent z-10"></div>
+        <div
+            class="absolute top-0 right-0 w-32 h-full bg-linear-to-l from-slate-950 to-transparent z-10"
+        >
+        </div>
+        <div
+            class="absolute top-0 left-0 w-32 h-full bg-linear-to-r from-slate-950 to-transparent z-10"
+        >
+        </div>
     </div>
 </section>
