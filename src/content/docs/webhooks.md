@@ -35,7 +35,7 @@ When a specific event occurs (e.g., a scan completes or a high-severity vulnerab
     "severity": "CRITICAL",
     "type": "SQL Injection",
     "target": "api.production.internal",
-    "remediation_url": "https://app.stratum.so/issues/123"
+    "remediation_url": "https://app.stratum-app.com/issues/123"
   }
 }
 ```

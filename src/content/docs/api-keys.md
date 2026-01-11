@@ -11,7 +11,7 @@ To interact with the Stratum API programmatically, you must use an API Key.
 
 ## Generating a Key
 
-1. Log in to the [Stratum Dashboard](https://app.stratum.so).
+1. Log in to the [Stratum Dashboard](https://app.stratum-app.com).
 2. Navigate to **Settings > Developer Settings**.
 3. Click on **Create New API Key**.
 4. Give your key a descriptive name and select its scope (Read-only or Admin).
@@ -22,7 +22,7 @@ To interact with the Stratum API programmatically, you must use an API Key.
 Include your API key in the `Authorization` header of your HTTP requests:
 
 ```bash
-curl -X GET "https://api.stratum.so/v1/scans" \
+curl -X GET "https://api.stratum-app.com/v1/scans" \
      -H "Authorization: Bearer YOUR_API_KEY"
 ```
 

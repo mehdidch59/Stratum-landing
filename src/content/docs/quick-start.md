@@ -11,7 +11,7 @@ Getting started with Stratum is simple. Follow these three steps to begin your f
 
 ## 1. Create your Account
 
-Head over to [app.stratum.so/signup](https://app.stratum.so/signup) to create your workspace. Once your email is verified, you'll be redirected to the Stratum Dashboard.
+Head over to [app.stratum-app.com/signup](https://app.stratum-app.com/signup) to create your workspace. Once your email is verified, you'll be redirected to the Stratum Dashboard.
 
 ## 2. Connect your Infrastructure
 
