@@ -1,5 +1,6 @@
 ---
-
+import { FaGithub } from "react-icons/fa";
+import { FaGitlab } from "react-icons/fa";
 ---
 
 <section id="features" class="py-24 relative overflow-hidden">
@@ -10,7 +11,7 @@
 
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+            <h2 class="text-3xl md:text-5xl font-bold font-heading mb-6">
                 Everything you need to <span
                     class="bg-linear-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent"
                     >secure</span
@@ -181,24 +182,25 @@
                     </p>
                 </div>
                 <div class="flex gap-4">
-                    {/* Fake Badges */}
+                    {/* GitHub Badge */}
                     <div
-                        class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3"
+                        class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3 transition-colors hover:bg-slate-700"
                     >
                         <div
-                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black font-bold"
+                            class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black"
                         >
-                            G
+                            <FaGithub className="w-6 h-6" />
                         </div>
                         <span class="font-bold text-slate-300">GitHub</span>
                     </div>
+                    {/* GitLab Badge */}
                     <div
-                        class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3"
+                        class="bg-slate-800 rounded-lg p-4 border border-white/5 flex items-center gap-3 transition-colors hover:bg-slate-700"
                     >
                         <div
-                            class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold"
+                            class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white"
                         >
-                            G
+                            <FaGitlab className="w-6 h-6" />
                         </div>
                         <span class="font-bold text-slate-300">GitLab</span>
                     </div>
