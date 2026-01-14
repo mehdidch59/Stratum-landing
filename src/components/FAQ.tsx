@@ -8,7 +8,7 @@ const faqs = [
     },
     {
         question: "Can I host it myself?",
-        answer: "Yes, the Enterprise plan includes self-hosted options for keeping all data within your VPC."
+        answer: "Yes, the Team plan includes self-hosted options for keeping all data within your VPC."
     },
     {
         question: "How does the DAST scanner work?",
