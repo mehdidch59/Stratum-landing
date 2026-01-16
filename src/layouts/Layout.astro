@@ -4,6 +4,7 @@ interface Props {
 }
 
 import "../styles/global.css";
+import CookieBanner from "../components/CookieBanner.astro";
 const { title } = Astro.props;
 ---
 
@@ -66,6 +67,7 @@ const { title } = Astro.props;
 		class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden"
 	>
 		<slot />
+		<CookieBanner />
 	</body>
 </html>
 

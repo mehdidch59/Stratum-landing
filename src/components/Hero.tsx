@@ -34,10 +34,10 @@ export const Hero = () => {
                     transition={{ duration: 0.4, delay: 0.4 }}
                     className="flex justify-center gap-4 mb-20"
                 >
-                    <button className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold font-heading tracking-wide rounded-full transition-all shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] flex items-center group cursor-pointer">
+                    <a href="/pricing" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold font-heading tracking-wide rounded-full transition-all shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] flex items-center group cursor-pointer">
                         Start Scanning for Free
                         <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                    </button>
+                    </a>
                 </motion.div>
 
                 {/* Dashboard Visual */}

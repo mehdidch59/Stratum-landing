@@ -1,0 +1,56 @@
+<div
+    id="cookie-banner"
+    class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-white/10 p-4 z-50 transform translate-y-full transition-transform duration-500"
+>
+    <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+        <p class="text-slate-400 text-sm">
+            We use cookies to improve your experience. By continuing to visit
+            this site you agree to our use of cookies.
+        </p>
+        <div class="flex gap-4">
+            <button
+                id="accept-cookies"
+                class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-sm font-bold rounded-full transition-colors"
+            >
+                Accept
+            </button>
+            <button
+                id="decline-cookies"
+                class="px-4 py-2 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+            >
+                Decline
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const declineBtn = document.getElementById("decline-cookies");
+
+    const consent = localStorage.getItem("cookie-consent");
+
+    if (!consent && banner) {
+        // Show banner after a small delay
+        setTimeout(() => {
+            banner.classList.remove("translate-y-full");
+        }, 1000);
+    }
+
+    if (acceptBtn && banner) {
+        acceptBtn.addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "accepted");
+            banner.classList.add("translate-y-full");
+        });
+    }
+
+    if (declineBtn && banner) {
+        declineBtn.addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "declined");
+            banner.classList.add("translate-y-full");
+        });
+    }
+</script>
