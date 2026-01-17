@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d dist --cname stratum-app.com"
+    "deploy": "gh-pages -d dist -t --cname stratum-app.com"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
