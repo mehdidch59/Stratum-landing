@@ -2,9 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import { Hero } from "../components/Hero";
-
 import Features from "../components/Features.astro";
-import HowItWorks from "../components/HowItWorks.astro";
+import { HowItWorks } from "../components/HowItWorks"; // Changed to named import for React component
 import { FAQ } from "../components/FAQ";
 import Footer from "../components/Footer.astro";
 import TechStack from "../components/TechStack";
@@ -12,11 +11,11 @@ import TechStack from "../components/TechStack";
 
 <Layout title="Stratum - Secure your Infrastructure">
 	<Navbar />
-	<main>
+	<main class="-mt-16">
 		<Hero client:load />
 		<TechStack />
 		<Features />
-		<HowItWorks />
+		<HowItWorks client:visible />
 		<FAQ client:visible />
 	</main>
 	<Footer />

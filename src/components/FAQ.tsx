@@ -1,56 +1,64 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const faqs = [
-    {
-        question: "Is it open source?",
-        answer: "Stratum Core is built on open-source technologies like Nuclei, but the dashboard and orchestration platform are proprietary. We do contribute back to the community regularly."
-    },
-    {
-        question: "Can I host it myself?",
-        answer: "Yes, the Team plan includes self-hosted options for keeping all data within your VPC."
-    },
-    {
-        question: "How does the DAST scanner work?",
-        answer: "Our DAST scanner performs active probing of your running application to identify runtime vulnerabilities like SQL Injection, XSS, and misconfigurations."
-    }
-];
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export const FAQ = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+    // Toggle FAQ accordion
+    const toggleFaq = (index: number) => {
+        setOpenFaq(openFaq === index ? null : index);
+    };
+
+    const faqs = [
+
+
+        {
+            question: "How does the DAST scanner work?",
+            answer: "Our Nuclei-powered DAST engine scans your running applications for thousands of known vulnerabilities, misconfigurations, and exposure risks in real-time."
+        },
+        {
+            question: "How does Stratum integrate with my CI/CD?",
+            answer: "Stratum connects directly to your pipelines (GitHub Actions, GitLab CI, etc.). It runs automatically on every commit or PR, blocking insecure code from reaching production."
+        },
+        {
+            question: "What does the SAST engine analyze?",
+            answer: "Our SAST engine scans your Git repositories for insecure code patterns, secrets, and vulnerabilities in your dependencies (SCA)."
+        },
+        {
+            question: "Can Stratum scan my Docker images?",
+            answer: "Yes. We scan your container registries and running containers to identify vulnerabilities in OS packages and configuration issues."
+        },
+        {
+            question: "What features are included in the Premium plans?",
+            answer: "Premium plans (Team & Business) provide advanced capabilities including SSO, RBAC, API access, priority 24/7 support, and increased scan limits suitable for larger organizations."
+        }
+    ];
 
     return (
-        <section className="py-24 max-w-3xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-                {faqs.map((faq, index) => (
-                    <div key={index} className="border border-white/10 bg-slate-900/30 rounded-lg overflow-hidden">
-                        <button
-                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none hover:bg-white/5 transition-colors cursor-pointer"
+        <section id="faq" className="py-24 bg-slate-900/30">
+            <div className="max-w-3xl mx-auto px-6">
+                <h2 className="text-3xl font-bold text-center text-white mb-12">Common Questions</h2>
+                <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                        <div
+                            key={index}
+                            className="border border-slate-800 rounded-lg bg-slate-950/50 overflow-hidden hover:border-slate-700 transition-colors"
                         >
-                            <span className="font-medium text-slate-200">{faq.question}</span>
-                            <span className={`transform transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
-                                <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </span>
-                        </button>
-                        <AnimatePresence>
-                            {openIndex === index && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="overflow-hidden"
-                                >
-                                    <div className="px-6 pb-4 text-slate-400 border-t border-white/5 pt-4">
-                                        {faq.answer}
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                ))}
+                            <button
+                                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                                onClick={() => toggleFaq(index)}
+                            >
+                                <span className="font-medium text-lg text-slate-200 flex-1 text-center">{faq.question}</span>
+                                {openFaq === index ? <ChevronUp className="w-5 h-5 text-accent" /> : <ChevronDown className="w-5 h-5 text-slate-500" />}
+                            </button>
+                            <div
+                                className={`px-6 text-slate-400 text-center transition-all duration-300 ease-in-out ${openFaq === index ? 'max-h-40 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+                            >
+                                {faq.answer}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
