@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     ArrowRight,
-
+    Check,
     Shield,
     Zap,
     Activity,
@@ -32,15 +32,18 @@ export const Hero = () => {
                     The all-in-one DevSecOps platform. Unified DAST, SAST, and Container Scanning to eliminate tool fatigue and secure your pipeline.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start gap-4 mb-24">
+                <div className="flex flex-col items-start gap-3 mb-24">
                     <a
-                        href="https://console.stratum-app.com"
+                        href="https://console.stratum-app.com/signup"
                         className="px-8 py-4 rounded-lg bg-slate-900 border border-white/10 text-slate-400 font-bold text-lg hover:text-white hover:border-white transition-all shadow-none hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] flex items-center group"
                     >
-                        Start Exploring
+                        Start Free
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
-
+                    <span className="flex items-center gap-1.5 text-sm text-slate-500 pl-1">
+                        <Check className="w-3.5 h-3.5 text-cyan-500/70" />
+                        No credit card required
+                    </span>
                 </div>
             </div>
 
