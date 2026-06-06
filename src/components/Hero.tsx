@@ -14,7 +14,6 @@ export const Hero = () => {
     return (
         <section className="relative pt-40 pb-20 px-6 overflow-hidden">
             {/* Background Ambience */}
-            <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.03] pointer-events-none"></div>
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto relative z-10 pt-20">
