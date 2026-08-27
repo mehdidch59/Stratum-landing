@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
@@ -7,7 +7,7 @@ import Footer from "../../components/Footer.astro";
 export async function getStaticPaths() {
     const docs = await getCollection("docs");
     return docs.map((entry) => ({
-        params: { slug: entry.slug || entry.id },
+        params: { slug: entry.id },
         props: { entry },
     }));
 }
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const allDocs = await getCollection("docs");
 const categories = [...new Set(allDocs.map((doc) => doc.data.category))].sort(
@@ -52,7 +52,7 @@ const groupedDocs = categories.map((category) => ({
                                 {category.items.map((item) => (
                                     <li>
                                         <a
-                                            href={`/docs/${item.slug || item.id}`}
+                                            href={`/docs/${item.id}`}
                                             class={`text-sm transition-colors hover:text-cyan-400 ${
                                                 entry.id === item.id
                                                     ? "text-cyan-400 font-bold"
